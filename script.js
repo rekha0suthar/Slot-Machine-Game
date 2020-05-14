@@ -49,12 +49,21 @@ function updateAnimation(newSpeed) {
 }
 
 inpSpeed.onchange = function (ev) {
-    // document.documentElement => this is ":root" of css
+
+    //if updated speed is 0 , stop
+    if((parseInt(ev.target.value))===0){
+        promiseObj()
+        inpSpeed.disabled = false; 
+    }
+    else{
+         // document.documentElement => this is ":root" of css
     document.documentElement.style.setProperty('--speed',ev.target.value )
-    updateAnimation(ev.target.value)
+        updateAnimation(ev.target.value)
     // speed = getComputedStyle(document.documentElement)
     //     .getPropertyValue('--speed') OR
-    speed = ev.target.value ;
+        speed = ev.target.value ;
+    }
+    
 }
 
 btnStop.onclick = function(){
