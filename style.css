@@ -1,68 +1,82 @@
-body{
-background-color: black;
+body {
+  background-color: black;
 }
 
 :root {
-    --speed: 5;
+  --speed: 5;
 }
 .machine {
-    background-color: peru;
-    border: dashed brown 3px;
-    height: 300px;
-    width: 900px;
-    margin-top: 100px;
-    z-index: 5;
-    display: flex;
-    margin-left:auto;
-    margin-right:auto; 
+  background-color: peru;
+  border: dashed brown 3px;
+  height: 300px;
+  width: 900px;
+  margin-top: 100px;
+  z-index: 5;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #inpSpeed {
-    font-size: 30pt;
-    margin:0px 50px;
-    width:200px; 
+  font-size: 30pt;
+  margin: 0px 50px;
+  width: 200px;
 }
 
 .slot {
-    height: 250px;
-    width: 250px;
-    margin: 20px;
-    overflow: hidden;
-    z-index: 1;
-    background-color: beige;
-    border: solid darkblue 2px;
-    text-align: center;
-    font-size: 100pt;
-    line-height: 250px;
+  height: 250px;
+  width: 250px;
+  margin: 20px;
+  overflow: hidden;
+  z-index: 1;
+  background-color: beige;
+  border: solid darkblue 2px;
+  text-align: center;
+  font-size: 100pt;
+  line-height: 250px;
 }
 
 .slot > .value {
-    z-index: 3;
-    animation-name: slotspin;
-    animation-iteration-count: infinite; 
-    animation-duration: calc(1s / var(--speed));
+  z-index: 3;
+  animation-name: slotspin;
+  animation-iteration-count: infinite;
+  animation-duration: calc(1s / var(--speed));
 }
 
 @keyframes slotspin {
-    0% {
-        transform: translateY(-200px);
-    }
-    100% {
-        transform: translateY(200px)
-    }
+  0% {
+    transform: translateY(-200px);
+  }
+
+  100% {
+    transform: translateY(200px);
+  }
 }
 
-.btn{
-    background-color:brown;
-    font-size: 30pt;
-    cursor: pointer;
-    font-style:ariel;
-    margin-right:50px;
-    border-radius: 8px;
-    padding:4px 40px;
+.slot-stop > .value {
+  z-index: 3;
+  animation-name: slotstopspin;
+  animation-iteration-count: infinite;
+  animation-duration: calc(1s / var(--speed));
 }
 
-.speednbtn{
-    text-align: center;
-    margin-top:150px;
+@keyframes slotstopspin {
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+.btn {
+  background-color: brown;
+  font-size: 30pt;
+  cursor: pointer;
+  font-style: ariel;
+  margin-right: 50px;
+  border-radius: 8px;
+  padding: 4px 40px;
+}
+
+.speednbtn {
+  text-align: center;
+  margin-top: 150px;
 }
